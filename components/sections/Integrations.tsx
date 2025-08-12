@@ -2,7 +2,7 @@
 
 import { motion, Variants } from 'framer-motion';
 import copy from '@/copy.json';
-import { Integrations as IntegrationsCopy, IntegrationLogo } from '@/lib/types';
+import { Integrations as IntegrationsCopy } from '@/lib/types';
 import Image from 'next/image';
 import { 
   Tooltip,

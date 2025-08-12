@@ -1,9 +1,9 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import copy from '@/copy.json';
-import { HowItWorks as HowItWorksCopy, HowItWorksStep } from '@/lib/types';
+import { HowItWorks as HowItWorksCopy } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import { VisualDisplay } from '@/components/ui/VisualDisplay';
 

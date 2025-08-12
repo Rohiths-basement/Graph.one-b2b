@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, Variants } from 'framer-motion';
-import { Mail, Calendar, MessageSquare, Briefcase } from 'lucide-react';
+import { Mail, MessageSquare, Briefcase } from 'lucide-react';
 
 const sources = [
   { name: 'Google Workspace', icon: Mail, description: 'Gmail & Calendar' },

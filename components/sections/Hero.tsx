@@ -18,10 +18,6 @@ const fadeUp: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.26, ease: [0.22, 0.61, 0.36, 1] } },
 };
 
-const drawLine: Variants = {
-  hidden: { pathLength: 0, opacity: 0 },
-  show: { pathLength: 1, opacity: 1, transition: { duration: 0.42, ease: 'easeInOut' } },
-};
 
 type PathNode = { initial: string; label: string; tooltip: string };
 type PathData = { path: PathNode[] };

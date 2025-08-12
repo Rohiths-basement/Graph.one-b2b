@@ -1,7 +1,7 @@
 'use client';
 
 import { useSearchParams, useRouter, usePathname } from 'next/navigation';
-import { Button } from '@/components/ui/button';
+
 import { motion } from 'framer-motion';
 
 type Persona = 'revenue' | 'people';
