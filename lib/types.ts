@@ -119,6 +119,12 @@ interface PersonaCtaContent {
   subtext: string;
 }
 
+
+export type FinalCtaCopy = {
+  revenue: PersonaCtaContent;
+  people: PersonaCtaContent;
+}
+
 export interface FinalCta {
   revenue: PersonaCtaContent;
   people: PersonaCtaContent;
