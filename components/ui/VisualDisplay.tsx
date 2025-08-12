@@ -15,7 +15,7 @@ const mockPath = [
   { label: 'Anna Wong', badge: 'CEO at Acme Inc.' },
 ];
 
-const components: { [key: string]: React.ComponentType<{}> } = {
+const components: { [key: string]: React.ComponentType<object> } = {
   SourceConnector,
   PathPreview: () => <PathPreview nodes={mockPath} />,
 };
