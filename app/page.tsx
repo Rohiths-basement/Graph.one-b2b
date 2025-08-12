@@ -1,103 +1,62 @@
-import Image from "next/image";
+import { Suspense } from 'react';
+import Image from 'next/image';
+import { Hero } from '@/components/sections/Hero';
+import { SocialProof } from '@/components/sections/SocialProof';
+import { ValueProps } from '@/components/sections/ValueProps';
+import { HowItWorks } from '@/components/sections/HowItWorks';
+import { RoiCalculator } from '@/components/sections/RoiCalculator';
+import { Privacy } from '@/components/sections/Privacy';
+import { Integrations } from '@/components/sections/Integrations';
+import { FinalCta } from '@/components/sections/FinalCta';
+import { Footer } from '@/components/sections/Footer';
+import { PersonaSwitcher } from '@/components/ui/PersonaSwitcher';
 
-export default function Home() {
+// This forces the page to be dynamically rendered.
+export const dynamic = 'force-dynamic';
+
+// The main content of the page, which depends on the persona.
+function PageContent({ persona }: { persona: 'revenue' | 'people' }) {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      <SocialProof />
+      <ValueProps persona={persona} />
+      <HowItWorks />
+      <RoiCalculator />
+      <Privacy />
+      <Integrations />
+      <FinalCta persona={persona} />
+    </>
+  );
+}
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+// The Home component, which orchestrates the page.
+export default async function Home({ searchParams }: { searchParams: Promise<{ p?: string }> }) {
+  const { p } = await searchParams;
+  const persona: 'revenue' | 'people' = p === 'people' ? 'people' : 'revenue';
+
+  return (
+    <main className="flex-grow">
+      <Hero persona={persona} />
+      <Suspense>
+        <PersonaSwitcher />
+      </Suspense>
+
+      {/* Product screenshot below persona switcher */}
+      <div className="flex justify-center px-4">
+        <Image
+          src="/image.png"
+          alt="Graph.one AI-evaluated candidate list screenshot"
+          width={1024}
+          height={568}
+          priority
+          className="w-full max-w-5xl rounded-xl shadow-2xl border"
+        />
+      </div>
+
+      <Suspense fallback={<div>Loading...</div>}>
+        <PageContent persona={persona} />
+      </Suspense>
+      <Footer />
+    </main>
   );
 }

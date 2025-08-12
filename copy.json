@@ -1,0 +1,279 @@
+{
+  "nav": {
+    "links": [
+      {
+        "label": "Product",
+        "href": "#value-props"
+      },
+      {
+        "label": "How it Works",
+        "href": "#how-it-works"
+      },
+      {
+        "label": "Privacy",
+        "href": "#privacy"
+      }
+    ],
+    "cta1": "Book a pilot",
+    "cta2": "See the sandbox"
+  },
+  "socialProof": "Trusted by teams at Fortune 500 companies, high-growth startups, and leading venture capital firms.",
+  "hero": {
+    "heading": "Find customers, partners, & candidates - through people you work with.",
+    "revenue": {
+      "subheading": "Trusted intros for sales, partnerships, and finding experts. Your team stays in control.",
+      "cta1": "See the sandbox",
+      "cta2": "Request access",
+      "chips": ["Find warm leads", "Map key accounts", "Source experts", "Prep for meetings"]
+    },
+    "people": {
+      "subheading": "Trusted intros for hiring, mentorship, and building team cohesion. Employees stay in control.",
+      "cta1": "Book a pilot",
+      "cta2": "Watch a demo",
+      "chips": ["Source candidates", "Boost referrals", "Onboard new hires", "Find mentors"]
+    }
+  },
+  "valueProps": {
+    "heading": "One graph. Endless applications.",
+    "cards": [
+      {
+        "title": "Customers (Sales)",
+        "description": "Shorten cycles with trusted paths into target accounts.",
+        "bullets": [
+          "Rank mutuals by strength and path length",
+          "One-click intro-ask + forwardable blurb"
+        ],
+        "proof": "1 extra warm intro / seller / month → material pipeline lift"
+      },
+      {
+        "title": "Partnerships (BizDev)",
+        "description": "Find the right operator at ISVs/resellers via your strongest mutual.",
+        "bullets": [
+          "Merge partner lists with employee networks",
+          "Track intro requests in your CRM"
+        ],
+        "proof": "Discovery cut from weeks to days"
+      },
+      {
+        "title": "Hiring (Referrals)",
+        "description": "Fill critical roles through real relationships, not blasts.",
+        "bullets": [
+          "Map credible 2nd/3rd-degree candidates",
+          "Attribute referral rewards automatically"
+        ],
+        "proof": "Higher onsite→offer via trusted intros"
+      },
+      {
+        "title": "Contractors & Experts",
+        "description": "Spin up the right specialist through people you trust.",
+        "bullets": [
+          "Match on outcomes, not keywords",
+          "See who worked with whom, recently"
+        ],
+        "proof": "Right expert in hours, not weeks"
+      },
+      {
+        "title": "Employee Bonding & Mentorship",
+        "description": "Warm coffee chats and buddy matches from existing ties.",
+        "bullets": [
+          "Opt-in suggestions with shared context",
+          "Revocable at any time"
+        ],
+        "proof": "Stronger internal network density"
+      }
+    ]
+  },
+  "howItWorks": {
+    "heading": "How it works",
+    "steps": [
+      {
+        "title": "1. Connect your sources",
+        "description": "Securely connect your team’s tools—like Slack, Google Workspace, and Microsoft 365. The graph is built in the background, respecting all existing permissions.",
+        "visual": {
+          "type": "ui",
+          "component": "SourceConnector"
+        }
+      },
+      {
+        "title": "2. Ask your question",
+        "description": "Use natural language or our API to find the shortest path to anyone. Our AI ranks paths by strength, so you always get the warmest intro.",
+        "visual": {
+          "type": "code",
+          "language": "graphql",
+          "code": "query GetPath($from: ID!, $to: ID!) {\n  path(from: $from, to: $to) {\n    rank\n    nodes {\n      id\n      name\n      role\n    }\n    edges {\n      source\n      target\n      weight\n    }\n  }\n}"
+        }
+      },
+      {
+        "title": "3. Act on the answer",
+        "description": "Request an intro, copy a blurb for your team, or explore alternative paths. The graph makes your network actionable.",
+        "visual": {
+          "type": "ui",
+          "component": "PathPreview"
+        }
+      }
+    ]
+  },
+  "privacy": {
+    "heading": "Enterprise-grade privacy & security.",
+    "explainer": "We provide the controls and compliance you need to operate securely. Your data is yours, always.",
+    "checklist": [
+      {
+        "title": "SOC 2 Type II Certified",
+        "description": "Our systems and processes are regularly audited and validated by third-party experts to ensure we meet the highest standards for security, availability, and confidentiality."
+      },
+      {
+        "title": "GDPR & CCPA Compliant",
+        "description": "We are fully compliant with major data privacy regulations, providing you with the tools and guarantees needed to manage data subject rights and international data transfers."
+      },
+      {
+        "title": "Encryption at Rest & In-Transit",
+        "description": "All data, whether stored in our databases or moving between services, is encrypted using industry-standard AES-256 encryption to prevent unauthorized access."
+      },
+      {
+        "title": "Role-Based Access Control (RBAC)",
+        "description": "Fine-grained permissions allow you to control exactly who can see and do what within your organization's graph, ensuring data is only accessible to authorized personnel."
+      },
+      {
+        "title": "Data Portability & Deletion",
+        "description": "You have complete control over your data. We provide simple tools for exporting your entire graph or permanently deleting all associated information from our systems upon request."
+      }
+    ]
+  },
+  "integrations": {
+    "heading": "API-first for seamless integration",
+    "logos": [
+      {
+        "name": "Google Workspace",
+        "tooltip": "Syncs with Gmail and Google Calendar for real-time relationship data.",
+        "src": "/Google workspace.svg"
+      },
+      {
+        "name": "Microsoft 365",
+        "tooltip": "Integrates with Outlook and Teams to map your organization's communication graph.",
+        "src": "/microsoft365.png"
+      },
+      {
+        "name": "Slack",
+        "tooltip": "Analyzes public channel interactions to identify key collaborators.",
+        "src": "/slack.png"
+      },
+      {
+        "name": "Salesforce",
+        "tooltip": "Enriches CRM data with relationship scores to find warm intro paths to leads.",
+        "src": "/salesforce.png"
+      },
+      {
+        "name": "HubSpot",
+        "tooltip": "Connects marketing and sales data with your internal network for better outreach.",
+        "src": "/hubspot.png"
+      },
+      {
+        "name": "Attio",
+        "tooltip": "Supercharges your Attio relationship lists with automated data enrichment.",
+        "src": "/attio.png"
+      }
+    ]
+  },
+  "roiCalculators": {
+    "people": {
+      "heading": "Estimate your ROI",
+      "description": "See how much time and money you can save with Graph.one's automated candidate screening and sourcing.",
+      "metrics": [
+        {
+          "id": "employees",
+          "label": "Number of Employees",
+          "min": 100,
+          "max": 5000,
+          "step": 100,
+          "defaultValue": 1000,
+          "format": "number"
+        },
+        {
+          "id": "hiring",
+          "label": "Annual Hires",
+          "min": 10,
+          "max": 1000,
+          "step": 10,
+          "defaultValue": 200,
+          "format": "number"
+        }
+      ],
+      "calculation": {
+        "hoursSavedPerStandardHire": 5,
+        "hoursSavedPerReferralHire": 20,
+        "employeeToReferralHireRatio": 100,
+        "avgHourlyRate": 45
+      },
+      "results": {
+        "primaryLabel": "Estimated hours saved annually",
+        "secondaryLabel": "Monetary value of time saved"
+      }
+    },
+    "revenue": {
+      "heading": "Estimate your ROI",
+      "description": "See how much additional revenue you can generate with Graph.one's automated account and contact discovery.",
+      "metrics": [
+        {
+          "id": "employees",
+          "label": "Number of Employees",
+          "min": 100,
+          "max": 10000,
+          "step": 100,
+          "defaultValue": 1000,
+          "format": "number"
+        },
+        {
+          "id": "reps",
+          "label": "Number of Sales Reps",
+          "min": 5,
+          "max": 200,
+          "step": 5,
+          "defaultValue": 25,
+          "format": "number"
+        },
+        {
+          "id": "dealSize",
+          "label": "Average Deal Size",
+          "min": 1000,
+          "max": 100000,
+          "step": 1000,
+          "defaultValue": 25000,
+          "format": "currency"
+        }
+      ],
+      "calculation": {
+        "dealsPerRepPerYear": 2,
+        "employeeToOneDealRatio": 200
+      },
+      "results": {
+        "primaryLabel": "Estimated additional revenue annually",
+        "secondaryLabel": "That's a 10x return on investment"
+      }
+    }
+  },
+  "finalCta": {
+    "revenue": {
+      "heading": "Ready to unlock your team’s pipeline?",
+      "cta": "See the sandbox",
+      "subtext": "Takes under 60 seconds to see your first path. No data? Use the sandbox."
+    },
+    "people": {
+      "heading": "Ready to unlock your team’s collective network?",
+      "cta": "Book a pilot",
+      "subtext": "Takes under 60 seconds to see your first path. No data? Use the sandbox."
+    }
+  },
+  "footer": {
+    "copyright": " 2024 Graph.one. All rights reserved.",
+    "links": [
+      {
+        "label": "Privacy Policy",
+        "href": "#"
+      },
+      {
+        "label": "Terms of Service",
+        "href": "#"
+      }
+    ]
+  }
+}

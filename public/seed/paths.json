@@ -1,0 +1,30 @@
+{
+  "Head of Partnerships at fintechs in London": {
+    "path": [
+      { "initial": "Y", "label": "You", "tooltip": "Your starting point" },
+      { "initial": "A", "label": "Alex", "tooltip": "Met last week • 3 emails" },
+      { "initial": "S", "label": "Sarah", "tooltip": "Head of Partnerships @ Acme" }
+    ]
+  },
+  "Data platform director at Fortune 100 retailers": {
+    "path": [
+      { "initial": "Y", "label": "You", "tooltip": "Your starting point" },
+      { "initial": "B", "label": "Ben", "tooltip": "Colleague @ Graph.one" },
+      { "initial": "D", "label": "David", "tooltip": "Platform Director @ RetailCorp" }
+    ]
+  },
+  "Senior ML engineer for a short-term audit": {
+    "path": [
+      { "initial": "Y", "label": "You", "tooltip": "Your starting point" },
+      { "initial": "C", "label": "Chloe", "tooltip": "Ex-colleague • 2 projects" },
+      { "initial": "M", "label": "Maria", "tooltip": "Senior ML Engineer" }
+    ]
+  },
+  "Marketing lead at potential reseller in DACH": {
+    "path": [
+      { "initial": "Y", "label": "You", "tooltip": "Your starting point" },
+      { "initial": "L", "label": "Leo", "tooltip": "LinkedIn connection" },
+      { "initial": "H", "label": "Hans", "tooltip": "Marketing Lead @ Reseller GmbH" }
+    ]
+  }
+}
